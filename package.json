@@ -7,8 +7,12 @@
     "migrate": "node scripts/migrate-db.js"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.7.4",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@types/mysql2": "types/mysql2",
     "dotenv": "^10.0.0",
+    "framer-motion": "^5",
     "mysql2": "^2.3.3",
     "next": "latest",
     "react": "^17.0.2",
