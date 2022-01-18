@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mysql_db:
+    image: mysql:latest
+    container_name: mysql_db
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_PASSWORD: root
+    networks:
+      - app-network
+  frontend:
+    build:
+      context: ./
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
