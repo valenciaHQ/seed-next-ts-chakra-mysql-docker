@@ -9,6 +9,7 @@ WORKDIR /usr/src
 # copy source files
 COPY . /usr/src
 
+RUN yarn install
 RUN yarn build
 
 EXPOSE 3000
